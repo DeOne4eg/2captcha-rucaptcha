@@ -1,6 +1,6 @@
 {
   "name": "2captcha-rucaptcha",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple 2captcha and rucaptcha API wrapper for Node.js",
   "keywords": [
     "2captcha",

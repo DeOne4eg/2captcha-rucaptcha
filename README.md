@@ -11,13 +11,13 @@ The package is written in TypeScript and currently only supports base64 images.
 NPM:
 
 ```bash
-npm i 2captcha-bot --save
+npm i 2captcha-rucaptcha --save
 ```
 
 Yarn:
 
 ```bash
-yarn add 2captcha-bot
+yarn add 2captcha-rucaptcha
 ```
 
 ## Usage
