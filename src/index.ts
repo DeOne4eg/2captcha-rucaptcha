@@ -1,5 +1,5 @@
-import axios from "axios";
-import delay from "delay";
+const axios = require("axios");
+const delay = require("delay");
 
 import * as I from "./types/in";
 import * as IR from "./types/res";
@@ -15,7 +15,7 @@ enum urls2 {
   POST = "http://2captcha.com/in.php"
 }
 
-export default class Captcha {
+export class Captcha {
   readonly key: string;
   readonly delay: number;
   readonly type: number;

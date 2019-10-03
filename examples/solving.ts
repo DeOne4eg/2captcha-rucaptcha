@@ -1,5 +1,5 @@
-import Captcha from "../src/index";
-import * as fs from "fs";
+const { Captcha } = require("../src/index");
+const fs = require("fs");
 
 const captcha = new Captcha({
   type: 2,

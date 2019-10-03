@@ -1,25 +1,23 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
-    "lib": ["es7"],
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": "./lib",
     "declaration": true,
-    "esModuleInterop": false,
+    "experimentalDecorators": true,
+    "lib": ["es6"],
     "module": "commonjs",
     "moduleResolution": "node",
-    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "lib",
+    "pretty": true,
     "removeComments": true,
-    "noLib": false,
-    "allowSyntheticDefaultImports": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "ES2017",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "allowJs": false,
-    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": false,
     "strict": true,
-    "forceConsitentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true
-  }
+    "target": "es2015",
+    "noImplicitAny": true
+  },
+  "include": ["./src/*", "./src/types/*", "./src/utils/*"]
 }

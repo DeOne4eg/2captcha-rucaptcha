@@ -27,8 +27,8 @@ All examples are on the github.
 ### Upload image to rucaptcha
 
 ```typescript
-import TwoCaptcha from "../src/index";
-import * as fs from "fs";
+const { Captcha } = require("2captcha-rucaptcha");
+const fs = require("fs");
 
 const captcha = new Captcha({
   type: 1,
@@ -49,8 +49,8 @@ captcha
 ### Upload image to 2captcha
 
 ```typescript
-import TwoCaptcha from "../src/index";
-import * as fs from "fs";
+const { Captcha } = require("2captcha-rucaptcha");
+const fs = require("fs");
 
 const captcha = new Captcha({
   type: 2,

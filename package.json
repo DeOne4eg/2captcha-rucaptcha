@@ -1,6 +1,6 @@
 {
   "name": "2captcha-rucaptcha",
-  "version": "1.0.1",
+  "version": "1.1.5",
   "description": "Simple 2captcha and rucaptcha API wrapper for Node.js",
   "keywords": [
     "2captcha",
@@ -8,10 +8,15 @@
     "rucaptcha",
     "rucaptcha.com"
   ],
+  "files": [
+    "lib"
+  ],
   "repository": "https://github.com/DeOne4eg/2captcha-rucaptcha.git",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/types/index.js",
+  "utils": "lib/utils/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "author": "DeOne",
   "license": "MIT",

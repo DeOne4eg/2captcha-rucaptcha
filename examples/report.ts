@@ -1,4 +1,4 @@
-import Captcha from "../src/index";
+const { Captcha } = require("../src/index");
 
 const captcha = new Captcha({
   type: 2,
