@@ -19,6 +19,7 @@ node_modules/
 package-lock.json
 tsconfig.json
 tslint.json
+package.json
 
 # Build
 dist/

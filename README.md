@@ -1,8 +1,8 @@
 # Simple 2captcha and rucaptcha API wrapper for Node.js
 
-[![npm version](https://img.shields.io/static/v1?label=npm&message=v1.0.0&color=brightgreen)](https://www.npmjs.com/package/2captcha-bot)
-[![coverage](https://img.shields.io/static/v1?label=coverage&message=100%&color=blue)](https://www.npmjs.com/package/2captcha-bot)
-[![build](https://img.shields.io/static/v1?label=build&message=passing&color=green)](https://www.npmjs.com/package/2captcha-bot)
+[![npm version](https://img.shields.io/static/v1?label=npm&message=v1.1.7&color=brightgreen)](https://www.npmjs.com/package/2captcha-rucaptcha)
+[![coverage](https://img.shields.io/static/v1?label=coverage&message=100%&color=blue)](https://www.npmjs.com/package/2captcha-rucaptcha)
+[![build](https://img.shields.io/static/v1?label=build&message=passing&color=green)](https://www.npmjs.com/package/2captcha-rucaptcha)
 
 The package is written in TypeScript and currently only supports base64 images.
 
@@ -95,10 +95,21 @@ captcha
 | header_acao      |    -     | 0 - disabled<br>1 - enabled.<br>If enabled in.php will include Access-Control-Allow-Origin:\* header in the response.<br>Used for cross-domain AJAX requests in web applications.                 |
 | softId           |    -     | ID of software developer                                                                                                                                                                          |
 
+### Report bad and good
+
+To report a failed or successful captcha solution, you need to use the following methods: 
+
+```typescript
+bad(id)
+good(id)
+```
+
 #### Example:
 
 ```typescript
-captcha.solve({ method: "base64", body: base64, lang: "ru", numeric: 1 });
+solution = await captcha.solve({ method: "base64", body: base64, lang: "en", numeric: 1 });
+if (ok) captcha.good(captcha.id);
+else captcha.bad(captcha.id);
 ```
 
 ### Proxy

@@ -20,12 +20,15 @@ export class Captcha {
   readonly delay: number;
   readonly type: number;
 
+  public id: string;
+
   /**
    * @param  {Config} config
    */
   constructor(config: Config) {
     this.key = config.key;
     this.type = config.type;
+    this.id = '';
 
     if (config.delay === undefined) this.delay = 3;
     else this.delay = config.delay;
@@ -44,6 +47,7 @@ export class Captcha {
         const data: I.InResponse = await this.sendPost(options);
         if (data.status) {
           const id: string = data.request.toString();
+          this.id = id;
           let result: string = await this.solver({ id });
           resolve(result);
         } else reject(data.request);
@@ -101,14 +105,17 @@ export class Captcha {
   }
 
   /**
-   * @param  {IR.ResRequest} options
+   * @param  {string} id
    * @returns Promise<string>
    */
-  public async good(options: IR.ResRequest): Promise<string> {
+  public async good(id: string): Promise<string> {
     return new Promise(async (resolve, reject) => {
-      options.action = "reportgood";
-      options.key = this.key;
-      options.json = 1;
+      const options = {
+        action: "reportgood",
+        key: this.key,
+        json: 1,
+        id
+      } as IR.ResRequest;
 
       try {
         const data: IR.ResResponse = await this.sendGet(options);
@@ -121,14 +128,17 @@ export class Captcha {
   }
 
   /**
-   * @param  {IR.ResRequest} options
+   * @param  {string} id
    * @returns Promise<string>
    */
-  public async bad(options: IR.ResRequest): Promise<string> {
+  public async bad(id: string): Promise<string> {
     return new Promise(async (resolve, reject) => {
-      options.action = "reportbad";
-      options.key = this.key;
-      options.json = 1;
+      const options = {
+        action: "reportbad",
+        key: this.key,
+        json: 1,
+        id
+      } as IR.ResRequest;
 
       try {
         const data: IR.ResResponse = await this.sendGet(options);
